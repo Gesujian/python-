@@ -45,7 +45,7 @@ if __name__=='__main__':
 		print(cur.data)
 		cur = cur.next
 	print("\nAfterReverse:")
-	#head=function
+	head=Reverese(head)
 	cur = head.next
 	while cur != None:
 		print(cur.data)

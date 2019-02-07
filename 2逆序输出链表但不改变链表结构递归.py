@@ -1,0 +1,64 @@
+class LNode(object):
+	"""docstring for LNode"""
+	def __init__(self, arg):
+		self.data = arg
+		self.next = None
+
+def ReversePrint(head):
+	'''
+		不带头结点的链表逆序输出但不改变链表结构
+
+		:param head:
+		:return:
+	'''
+	if head is None:
+		return
+	ReversePrint(head.next)
+	print(head.data)
+	return head
+
+def printHaveFirstNodeREverseLink(head):
+	'''
+	带头节点
+	'''
+	if head.next is None:
+		return head
+	firstNode = head.next
+	newhead = ReversePrint(firstNode)
+	head.next = newhead
+	return head
+
+
+		
+
+if __name__ == '__main__':
+	i = 1
+	#有头节点
+	head = LNode(None)
+	# head.data=None
+	# head.next=None
+	cur = head
+	tmp = None  # 用作添加新节点
+
+	# 构造单链表
+
+	while i <= 8:
+		tmp = LNode(i)
+		# tmp.data=i
+		# tmp.next=None
+		cur.next = tmp
+		cur = tmp
+		i += 1
+	print("BeforeReverse:")
+	cur = head.next
+	while cur != None:
+		print(cur.data)
+		cur = cur.next
+	#逆序输出但是不改变链表结构
+	print("\nprintHaveFirstNodeREverseLink:")
+	head=printHaveFirstNodeREverseLink(head)
+	print("\nAfterReverse:")
+	cur = head.next
+	while cur != None:
+		print(cur.data)
+		cur = cur.next
