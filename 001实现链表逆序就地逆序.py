@@ -42,7 +42,6 @@ def Reverse(head):
 
 	# 处理最后一个节点与倒数第二个节点
 	cur.next = pre
-
 	# 添加头节点
 	head.next = cur
 
@@ -76,4 +75,4 @@ if __name__ == '__main__':
 		print(cur.data)
 		cur = cur.next
 	endtime = time.time()
-	print(str(endtime - starttime))
+	#print(str(endtime - starttime))

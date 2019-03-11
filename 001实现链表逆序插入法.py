@@ -19,18 +19,12 @@ def Reverse(head):
 	:param head: 链表头
 	:return: 逆序后的链表头
 	'''
-	cur = None
-	next = None
-	tmp = LNode(None)
-	cur = head
-	head=tmp
-	head.next=cur
 	if head is None or head.next is None:
 		return head
 	cur = None
 	next = None
 	cur = head.next.next
-	head.next = None
+	head.next.next = None
 	while cur is not None:
 		next=cur.next
 		cur.next=head.next
@@ -44,7 +38,7 @@ if __name__=='__main__':
 	tmp=None
 	head=LNode(None)#链表头
 	cur=head
-	while i<=7:
+	while i<=8:
 		tmp=LNode(i)
 		cur.next=tmp
 		cur=tmp

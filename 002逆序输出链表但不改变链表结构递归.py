@@ -12,12 +12,6 @@ Head->1->2->3->4->5->6->7->8
 方法：递归
 """
 def ReversePrint(head):
-	'''
-		不带头结点的链表逆序输出但不改变链表结构
-
-		:param head:
-		:return:
-	'''
 	if head is None:
 		return
 	ReversePrint(head.next)

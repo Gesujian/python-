@@ -11,6 +11,7 @@ class LNode:
 要求：
 方法：遍历链表计算链表长度n,然后求顺序第n-k+1个元素即可，再遍历一遍链表就可以得到结果
 """
+#先构造链表
 def creatLink(x):
 	i = 1
 	head = LNode(None)
@@ -23,15 +24,19 @@ def creatLink(x):
 		cur = tmp
 		i += 1
 	return head
+#函数开始
+#输入链表头以及k值
 def FindLastButK(head,k):
-	i=0
-	cur=head.next
+	#如果链表非空则执行
 	if head.next is not None:
+		cur=head #因为这里是计算链表长度，需要将第一个节点也算上
+		i=0 #用于记录链表长度
 		while cur.next is not None:
 			i+=1
 			cur=cur.next
+		#将问题转化为求 正序数第n-k+1个元素
 		n=i-k+1
-		cur=head.next
+		cur=head
 		while n>0:
 			cur=cur.next
 			n=n-1

@@ -96,6 +96,4 @@ if __name__ == '__main__':
 	s.pop()
 	s.destroy()
 	print("size:",s.size())
-
-
-
+	

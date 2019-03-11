@@ -17,6 +17,7 @@ def creatLink(x):
 	tmp = None
 	cur = head
 	while i <= x:
+		#这里与之前不同，先生成一个随机数，作为节点值
 		n = random.randint(1, 9)
 		tmp = LNode(n)
 		cur.next = tmp

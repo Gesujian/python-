@@ -6,7 +6,8 @@ class LNode:
 
 """
 题目描述：
-给定链表Head->1->1->3->3->5->7->7->8
+给定链表 
+Head->1->1->3->3->5->7->7->8
 k=4
 Head->5->7->7->8->1->1->3->3
 要求：
@@ -24,28 +25,30 @@ def creatLink(x):
 		cur = tmp
 		i += 1
 	return head
-def FindLastButK(head,k):
-	i=0
+
+def RotatingLastButK(head,k):
 	slow=head.next
 	fast=head.next
+	#处理fast节点
 	while k-1>0:
 		fast=fast.next
 		k-=1
-	#exec('''"fast=head.next"+".next"*(k-1)''')
+	#pre用来指向slow的前驱节点
 	pre=None
+	#判断链表是否为空，不为空执行
 	if head.next is not None:
+		#开始循环，直到fast指向最后一个节点。
 		while fast.next is not None:
-			#print("s",slow.data)
-			#print("f",fast.data)
 			pre=slow
 			slow=slow.next
 			fast=fast.next
-		pre.next=None
+		pre.next=None # 断开链表
 		cur=head.next
-		head.next=slow
-		fast.next=cur
-		return head
+		head.next=slow # 头结点指向slow
+		fast.next=cur # 将前N-k个节点接在尾部
+	#返回头结点
 	return head
+	
 if __name__ == '__main__':
 	head=creatLink(10)
 	print("beforewhirlhead:")
@@ -54,8 +57,7 @@ if __name__ == '__main__':
 		print(cur.data)
 		cur = cur.next
 	k=int(input("请输入k:\n"))
-
-	item=FindLastButK(head,k)
+	item=RotatingLastButK(head,k)
 	#print("链表倒数第%d个元素为："%k,item)
 	print("afterwhirlhead:")
 	cur = head.next

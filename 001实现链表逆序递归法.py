@@ -41,22 +41,22 @@ if __name__=='__main__':
 	tmp=None
 	head=LNode(None)#链表头
 	cur=head
-	while i<=7:
+	while i<=999:
 		tmp=LNode(i)
 		cur.next=tmp
 		cur=tmp
 		i+=1
 	#逆序前
-	print("BeforeReverse:")
+	print("BeforeReversehead:")
 	cur = head.next
 	while cur != None:
 		print(cur.data)
 		cur = cur.next
-	print("\nAfterReverse:")
+	print("\nAfterReversehead:")
 	head=Reverese(head)
 	cur = head.next
 	while cur != None:
 		print(cur.data)
 		cur = cur.next
 	endtime = time.time()
-	print(str(endtime - starttime))
+	#print(str(endtime - starttime))

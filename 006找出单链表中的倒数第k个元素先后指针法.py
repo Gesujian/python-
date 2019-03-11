@@ -40,7 +40,7 @@ def FindLastButK(head,k):
 		return slow.data
 	return None
 if __name__ == '__main__':
-	head=creatLink(100)
+	head=creatLink(10)
 	print("head:")
 	cur = head.next
 	while cur != None:

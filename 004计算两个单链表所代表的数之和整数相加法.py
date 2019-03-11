@@ -13,6 +13,7 @@ class LNode:
 个位在前
 方法：整数相加，先求h1的和，再求h2的和，然后相加，最后根据和新建链表
 """
+#构造链表
 def creatLink(x):
 	i = 1
 	head = LNode(None)
@@ -25,15 +26,16 @@ def creatLink(x):
 		cur = tmp
 		i += 1
 	return head
-
+#用于求和
 def fn(x,y):
 	return x*10+y
-	
+#求链表所代表的数	
 def sumlink(head):
-	Sum=0
+	Sum=0#保存和
 	cur=head.next
-	List=[]
+	List=[]#用于保存链表的每一个节点
 	while cur is not None:
+		#将节点保存在第一位
 		List.insert(0,cur.data)
 		cur=cur.next
 	if head is not None or head.next is not None:
@@ -55,9 +57,6 @@ def function(head1,head2):
 	# 判断链表是否为空
 	if head is None or head.next is None:
 		return
-	pre = None
-	cur = None
-	next = None
 
 	# 处理链表头
 	cur = head.next
